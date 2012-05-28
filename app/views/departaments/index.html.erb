@@ -1,0 +1,25 @@
+<h1>Listing departaments</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Chief</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @departaments.each do |departament| %>
+  <tr>
+    <td><%= departament.name %></td>
+    <td><%= departament.chief %></td>
+    <td><%= link_to 'Show', departament %></td>
+    <td><%= link_to 'Edit', edit_departament_path(departament) %></td>
+    <td><%= link_to 'Destroy', departament, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Departament', new_departament_path %>
