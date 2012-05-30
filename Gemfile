@@ -26,11 +26,14 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'annotate'
 end
 
 group :test do
    gem 'database_cleaner'
    gem 'cucumber-rails'
+   gem "cucumber-rails-training-wheels"
+   gem 'capybara'
    gem 'factory_girl_rails'
    gem 'email_spec'
 end

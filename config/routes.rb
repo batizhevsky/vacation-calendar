@@ -1,10 +1,20 @@
 VacationCalendar::Application.routes.draw do
+  get "calendars/index"
+
+  get "calendars/year"
+
+  get "calendars/month"
+
   resources :departaments
 
   resources :vacations
 
   resources :users
 
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -54,7 +64,7 @@ VacationCalendar::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'calendars#index'
 
   # See how all your routes lay out with "rake routes"
 
