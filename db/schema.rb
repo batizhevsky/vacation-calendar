@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528073609) do
+ActiveRecord::Schema.define(:version => 20120531113232) do
 
   create_table "calendars", :force => true do |t|
     t.date     "holiday"
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(:version => 20120528073609) do
     t.string   "login"
     t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "vacations", :force => true do |t|
